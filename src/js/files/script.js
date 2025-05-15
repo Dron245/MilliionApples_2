@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	function documentActions(e) {
 		const targetElement = e.target;
-		console.log(targetElement);
 		
 		// Связывание пунктов меню и саб-меню в фильрах в каталоге в мобильной версии
 		if (targetElement.closest("[data-parent]")) {
@@ -43,6 +42,18 @@ window.addEventListener("DOMContentLoaded", () => {
 				});
 				
 			}
+		}
+
+		//Работа кнопки "Назад"
+		if (targetElement.closest(".submenu__back")) {
+			document.documentElement.classList.remove("sub-menu-open");
+			// Удаляем класс _sub-menu-open у всех подменю
+			document.querySelectorAll(".menu-item-active").forEach(el => {
+				el.classList.remove("menu-item-active");
+			});
+			document.querySelectorAll("[data-submenu]._sub-menu-open").forEach(el => {
+				el.classList.remove("_sub-menu-open");
+			});
 		}
 	}
 });

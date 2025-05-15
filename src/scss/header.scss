@@ -38,7 +38,7 @@
 	row-gap: toRem(10);
 	@media (min-width: 48rem) {
 		border-right: 0.0625rem solid #e7e7e7;
-		padding: 2.5rem 1.875rem 2.5rem 0px;
+		padding: 2.5rem 1.875rem 2.5rem 0rem;
 	}
 	@media (max-width: toEm(768)){
 		row-gap: toRem(20);
@@ -54,8 +54,8 @@
 	display: flex;
 	align-items: center;
 	gap: toRem(10);
-	border-radius: 10px;
-padding: 16px 16px 16px 20px;
+	border-radius: 0.625rem;
+padding: 1rem 1rem 1rem 1.25rem;
 background-color: $backgroundColor;
 transition: background 0.3s ease 0s, color 0.3s ease 0s;
 .menu-item-active & {
@@ -86,13 +86,15 @@ transition: background 0.3s ease 0s, color 0.3s ease 0s;
 ._active {
 }
 .submenu {
-	margin-top: toRem(55);
+	@media (min-width: toEm(768)){
+		margin-top: toRem(55);
+	}
 	@media (max-width: toEm(768)){
 		//   position: absolute;
 		height: 100dvh;
     position: absolute;
     width: 100%;
-    top: 0;
+    top: 1.875rem;
 	 left: -100%;
 	//  overflow: auto;
 	 transition: left 0.3s ease 0s;
@@ -110,6 +112,18 @@ transition: background 0.3s ease 0s, color 0.3s ease 0s;
 	@media (min-width:toEm(768)){
 		 display: none; 
 	}
+	background-color: $backgroundColor;
+	border-radius: 6.25rem;
+padding: 0.75rem 1.625rem 0.75rem 1.25rem;
+row-gap: toRem(4);
+	font-family: "Mulish";
+	font-weight: 600;
+	font-size: toRem(14);
+	display: flex;
+	align-items: center;
+	&:active {
+		background-color: #cbfff1;
+	}
 }
 .submenu__content {
 	display: none;
@@ -122,18 +136,16 @@ transition: background 0.3s ease 0s, color 0.3s ease 0s;
 		 column-gap: toRem(50); 
 	}
 	@media (max-width: toEm(768)){
-		outline: 1px solid red;
 		  position: absolute;
-		  top: 0;
+		  columns: 1;
+		  top: 4.375rem;
 		//   left: -100%;
 		  width: 100%;
 		  height: 100%;
 		  overflow: auto;
 		  transition: left 0.3s ease 0s;
-		  background-color: #b9aeae;
-		  &._sub-menu-open {
-			// left: 0;
-		  }
+		  background-color: #fff;
+		  
 	}
 }
 

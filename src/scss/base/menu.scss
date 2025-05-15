@@ -5,13 +5,13 @@
 	// .menu__body
 	&__body {
 		@media (max-width: toRem(768)) {
-			position: fixed;
+			// position: fixed;
 			width: 100%;
 			height: 100%;
-			left: -100%;
+			left: -110%;
 			top: 0;
 			overflow: auto;
-			padding: toRem(108) toRem(40) toRem(40) toRem(40);
+			padding: toRem(108) toRem(20) toRem(40) toRem(20);
 			transition: left 0.3s;
 			// &::before {
 			// 	content: "";
@@ -23,6 +23,9 @@
 			// 	transition: left 0.3s;
 			// 	z-index: 2;
 			// }
+			@media (max-width:$mobileSmall){
+				 padding-inline: 0; 
+			}
 			.menu-open & {
 				left: 0;
 				&::before {
@@ -35,6 +38,10 @@
 	&__list {
 		@media (max-width: toRem(768)) {
 			position: relative;
+			.sub-menu-open & {
+				opacity: 0;
+				visibility: hidden;
+			}
 		}
 	}
 	// .menu__item
@@ -54,16 +61,19 @@
 		display: grid;
 		place-items: center;
 		background: #f1f5f8;
-		border-radius: 100px;
+		border-radius: 6.25rem;
 		position: relative;
 		position: absolute;
-		right: 40px;
-		top: 30px;
+		right: 2.5rem;
+		top: 1.875rem;
 		width: toRem(48);
 		height: toRem(48);
 		z-index: 50;
 		@media (any-hover: none) {
 			cursor: default;
+		}
+		@media (max-width:$mobileSmall){
+			 right: 1.25rem; 
 		}
 		span,
 		&::before,
@@ -77,10 +87,10 @@
 			background-color: #00A68A;
 		}
 		&::before {
-			top: 14px;
+			top: 0.875rem;
 		}
 		&::after {
-			bottom: 14px;
+			bottom: 0.875rem;
 		}
 		span {
 			top: calc(50% - toRem(1));

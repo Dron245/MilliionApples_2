@@ -4,8 +4,8 @@
 @import "base/mixins";
 
 // Подключение шрифтов ===========================================================================================================================================================================================================================================================================
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800,300italic,italic,500italic,600italic,700italic,800italic);
-@import url(https://fonts.googleapis.com/css?family=Mulish:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:regular,600,700);
+@import url(https://fonts.googleapis.com/css?family=Mulish:600,700);
 // Подключить если есть локальные файлы шрифтов
 //@import "fonts/fonts";
 
@@ -67,6 +67,9 @@ body {
 		overflow: hidden;
 		touch-action: none;
 		overscroll-behavior: none;
+	}
+	.lock.menu-open & {
+		overflow: auto;
 	}
 	// Сайт загружен
 	.loaded & {
