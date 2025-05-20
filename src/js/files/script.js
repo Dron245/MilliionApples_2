@@ -43,6 +43,10 @@ window.addEventListener("DOMContentLoaded", () => {
 				
 			}
 		}
+		// Открытие меню в мобильном
+		if (targetElement.closest(".header__button") && window.innerWidth <= 768) {
+			document.documentElement.classList.toggle("menu-open");
+		}
 
 		//Работа кнопки "Назад"
 		if (targetElement.closest(".submenu__back")) {
