@@ -1,8 +1,43 @@
 .header {
 }
-.header__container {
+.header__drop {
+	position: relative;
+	display: inline-block;
 	@media (max-width: toEm(768)){
-		  position: relative;
+		  display: block;
+	}
+}
+.header__button {
+	border: 1px solid #000;
+	border-radius: 12px;
+	padding: toRem(10) toRem(20);
+	cursor: pointer;
+	position: relative;
+	z-index: 2;
+}
+.header__container {
+	transition: top 0.3s, opacity 0.3s;
+	top: 20px;
+	opacity: 0;
+	// display: none;
+	z-index: -1;
+	@media (min-width:toEm(768)){
+		  display: none;
+	}
+	.header__drop:hover & {
+		@media (min-width: toEm(768)){
+			  display: block;
+		}
+		// display: block;
+		z-index: 1;
+		top: 0px;
+		opacity: 1;
+	}
+	@media (max-width: toEm(768)){
+		position: relative;
+		z-index: 1;
+		opacity: 1;
+		top: 0px;
 	}
 }
 .header__menu {
@@ -88,6 +123,7 @@ transition: background 0.3s ease 0s, color 0.3s ease 0s;
 .submenu {
 	@media (min-width: toEm(768)){
 		margin-top: toRem(55);
+		min-width: max-content;
 	}
 	@media (max-width: toEm(768)){
 		//   position: absolute;
